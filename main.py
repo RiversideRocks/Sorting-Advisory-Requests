@@ -171,10 +171,13 @@ juniors=[]
 seniors=[]
 
 for student in students:
-    if student.grade == 9: freshmen.append(student)
-    if student.grade ==10: sophomores.append(student)
-    if student.grade ==11: juniors.append(student)
-    if student.grade ==12: seniors.append(student)
+    try:
+        if student.grade == 9: freshmen.append(student)
+        if student.grade ==10: sophomores.append(student)
+        if student.grade ==11: juniors.append(student)
+        if student.grade ==12: seniors.append(student)
+    except:
+        print("Invalid student grade: " + student.grade + " (skipped)")
 
 Freshmen   = GraphData(freshmen,    9, idealClassSize)
 Sophomores = GraphData(sophomores, 10, idealClassSize)
